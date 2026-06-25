@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Loader, Send } from "lucide-react";
 
-export default function Page() {
+export default function CompletionPage() {
   const [prompt, setPrompt] = useState("");
   const [completion, setCompletion] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -40,14 +40,13 @@ export default function Page() {
 
   console.log(completion);
   return (
-    <div className="lg:w-2xl w-full mx-auto p-6 bg-white dark:bg-gray-800 flex flex-col items-center justify-start min-h-screen rounded-xl">
-      {error ? (
-        <p className="p-4 text-red-500">{error}</p>
-      ) : isLoading ? (
-        <p className="p-4">Loading...</p>
-      ) : completion ? (
-        <p className="p-4">{completion}</p>
-      ) : null}
+    <div className="lg:w-2xl w-full mx-auto p-6 dark:bg-gray-800 flex flex-col items-center justify-start min-h-screen">
+
+
+
+      {error && <p className="p-4 text-red-500">{error}</p>}
+      {isLoading && !completion && <p className="p-4">Loading...</p>}
+      {completion && <div className="whitespace-pre-wrap text-lg">{completion}</div>}
 
       <form
         onSubmit={handleSubmit}

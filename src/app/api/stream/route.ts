@@ -9,7 +9,7 @@ export async function POST(req: Request) {
   try {
     const { prompt } = await req.json();
     const result = streamText({
-      model: openRouter("nvidia/nemotron-nano-12b-v2-vl:free"),
+      model: openRouter("openrouter/owl-alpha"),
       system: `You are a helpful assistant that translates natural language into SQL queries.
 You will be given a natural language prompt, and you will respond with a SQL query that fulfills the request.
 You will not provide any explanations or additional information, only the SQL query itself.
