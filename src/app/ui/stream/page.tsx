@@ -3,7 +3,7 @@ import React from "react";
 import { Loader, Send } from "lucide-react";
 import { useCompletion } from "@ai-sdk/react";
 
-export default function StreamPage() {
+export default function ChatPage() {
   const {
     input,
     setInput,

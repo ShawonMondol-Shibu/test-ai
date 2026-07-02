@@ -1,6 +1,8 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import StreamPage from "./ui/stream/page";
 import CompletionPage from "./ui/completion/page";
+import ChatPage from "./ui/chat/page";
+
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
         <TabsList>
           <TabsTrigger value="completion" className={'text-md'}>Completion Chat</TabsTrigger>
           <TabsTrigger value="Stream" className={'text-md'}>Stream Chat</TabsTrigger>
+          <TabsTrigger value="Chat" className={'text-md'}>Chat</TabsTrigger>
         </TabsList>
 
         <TabsContent value="completion" className={''}>
@@ -20,6 +23,9 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="Stream">
           <StreamPage />
+        </TabsContent>
+        <TabsContent value="Chat">
+          <ChatPage />
         </TabsContent>
       </Tabs>
     </div>
